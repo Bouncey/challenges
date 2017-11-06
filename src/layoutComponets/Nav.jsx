@@ -1,14 +1,43 @@
 import React from 'react';
-import Nav from 'react-bootstrap/lib/Nav';
-import NavItem from 'react-bootstrap/lib/NavItem';
+import Link from 'gatsby-link';
+
+import fCCLogo from '../img/freeCodeCamp.png';
+
+import './styles/nav.scss';
+
+const links = [
+  {
+    title: 'Map',
+    href: '#'
+  },
+  {
+    title: 'Community',
+    href: '#'
+  },
+  {
+    title: 'Donate',
+    href: '#'
+  }
+];
+
+const navLinks = links.map(link => (
+  <li key={`${link.title}-${link.href}`}>
+    <Link to={link.href}>{link.title}</Link>
+  </li>
+));
 
 function FCCNav() {
   return (
-    <Nav bsStyle='pills'>
-      <NavItem href='#'>NavItem 1 content</NavItem>
-      <NavItem title='Item'>NavItem 2 content</NavItem>
-      <NavItem disabled={true}>NavItem 3 content</NavItem>
-    </Nav>
+    <nav>
+      <Link to='#'>
+        <img
+          alt='freeCodeCamp, learn to code and help non-profits'
+          height='100%'
+          src={fCCLogo}
+        />
+      </Link>
+      <ul className='nav nav-pills pull-right'>{navLinks}</ul>
+    </nav>
   );
 }
 

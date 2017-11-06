@@ -1,0 +1,22 @@
+#nav-container {
+  background-color: #006400;
+  height: 40px;
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    img {
+      max-height: 40px;
+    }
+  }
+  li > a{
+    font-size: 17px;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      color: #006400;
+    }
+  }
+}

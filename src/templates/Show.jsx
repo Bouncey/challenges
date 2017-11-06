@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import Row from 'react-bootstrap/lib/Row';
+
 import Preview from './views/Preview.jsx';
 
 const propTypes = {
@@ -26,7 +28,9 @@ function Show(props) {
       <Helmet>
         <title>{`${title} | freeCodeCamp Challenges`}</title>
       </Helmet>
-      <View {...props.data.markdownRemark} />
+      <Row>
+        <View {...props.data.markdownRemark} />
+      </Row>
     </div>
   );
 }

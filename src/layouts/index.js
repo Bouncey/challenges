@@ -8,8 +8,8 @@ import Nav from '../layoutComponets/Nav.jsx';
 
 function Layout({ children }) {
   return (
-    <div>
-      <Grid id='layout'>
+    <div id='layout'>
+      <Grid fluid={true} id='nav-container'>
         <Row>
           <Col xs={12}>
             <Nav />

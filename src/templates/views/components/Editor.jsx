@@ -10,6 +10,9 @@ import 'codemirror/mode/htmlmixed/htmlmixed';
 import 'codemirror/mode/css/css';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/monokai.css';
+
+import './styles/editor.scss';
+
 // Because react-codemirror forgot it?
 CodeMirror.displayName = 'CodeMirror';
 
@@ -44,7 +47,7 @@ class Editor extends PureComponent {
     const { seed, mode } = this.props;
     return (
       <NoSSR>
-        <Panel header={mode.toUpperCase()}>
+        <Panel header={mode.toUpperCase()} id='editor'>
           <CodeMirror options={this.options} value={seed} />
         </Panel>
       </NoSSR>

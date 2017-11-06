@@ -1,21 +1,20 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
+import Col from 'react-bootstrap/lib/Col';
 import SidePanel from './components/SidePanel.jsx';
-
-const propTypes = {
-  html: PropTypes.string
-};
 
 function Preview(props) {
   return (
     <div id='preview'>
-      <SidePanel {...props} />
+      <Col md={6} xs={12}>
+        <SidePanel {...props} />
+      </Col>
+      <Col md={6} xs={12}>
+        <h3>Preview on iPhone?</h3>
+      </Col>
     </div>
   );
 }
 
 Preview.displayName = 'Preview';
-Preview.propTypes = propTypes;
 
 export default Preview;
