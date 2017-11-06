@@ -16,6 +16,7 @@
     "test": "yarn run format && yarn run lint"
   },
   "dependencies": {
+    "caniuse-db": "^1.0.30000652",
     "gatsby": "^1.9.73",
     "gatsby-link": "^1.6.22",
     "gatsby-plugin-react-helmet": "^1.0.8",
@@ -24,6 +25,8 @@
     "gatsby-remark-smartypants": "^1.4.8",
     "gatsby-source-filesystem": "^1.5.7",
     "gatsby-transformer-remark": "^1.7.19",
+    "react": "^15.*",
+    "react-dom": "^15.*",
     "react-bootstrap": "^0.31.5",
     "react-codemirror": "^1.0.0",
     "react-no-ssr": "^1.1.0"
