@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import CodeMirror from 'react-codemirror';
 import NoSSR from 'react-no-ssr';
+import Panel from 'react-bootstrap/lib/Panel';
 
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/mode/jsx/jsx';
@@ -22,7 +23,6 @@ class Editor extends PureComponent {
     super(props);
 
     this.envProps = typeof window !== 'undefined' ? Object.keys(window) : [];
-    console.log(this.props.mode);
     this.codeMode = this.props.mode === 'html' ? 'htmlmixed' : this.props.mode;
     this.options = {
       lint: {
@@ -41,10 +41,12 @@ class Editor extends PureComponent {
     };
   }
   render() {
-    const { seed } = this.props;
+    const { seed, mode } = this.props;
     return (
       <NoSSR>
-        <CodeMirror options={this.options} value={seed} />
+        <Panel header={mode.toUpperCase()}>
+          <CodeMirror options={this.options} value={seed} />
+        </Panel>
       </NoSSR>
     );
   }

@@ -45,6 +45,9 @@ export const query = graphql`
         challengeType
         challengeSeed {
           html
+          css
+          js
+          jsx
         }
       }
     }

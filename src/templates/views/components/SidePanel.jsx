@@ -12,18 +12,15 @@ const propTypes = {
 
 function SidePanel(props) {
   const { html, frontmatter: { challengeSeed } } = props;
+  const editors = Object.keys(challengeSeed)
+    .filter(x => Array.isArray(challengeSeed[x]))
+    .map(lang => (
+      <Editor key={lang} mode={lang} seed={challengeSeed[lang].join('\n')} />
+    ));
   return (
     <section id='side-panel'>
       <Description content={html} />
-      {Object.keys(challengeSeed)
-        .filter(x => !!x)
-        .map(lang => (
-          <Editor
-            key={lang}
-            mode={lang}
-            seed={challengeSeed[lang].join('\n')}
-          />
-        ))}
+      {editors}
     </section>
   );
 }
